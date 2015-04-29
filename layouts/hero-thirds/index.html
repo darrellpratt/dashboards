@@ -7,6 +7,7 @@
 </head>
 <body class="application">
 
+
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -165,6 +166,26 @@
 
   <script type="text/javascript" src="../../assets/lib/keen-js/dist/keen.min.js"></script>
   <script type="text/javascript" src="../../assets/js/meta.js"></script>
+
+  <script>
+var project = new Keen({
+        projectId: 553ff65296773d08113d230f,
+        readKey: 33d9680d8c2577056ac8b01d1f83b954b5b8056cbb18e69e00d75ab06eb9536b0bd4634aba252ce606241fa507dc9d5620a78f43981c4b70191396428a29a39841c4c6e419336a2aed9366718f4d581563ee2f141935c1bad37314eb23cfe3cbce7c4871d38c8b2e6ed555497f19d9cf
+
+      });
+
+
+
+var query = new Keen.Query("count", {
+  eventCollection: "votes",
+  groupBy: "votes"
+  
+});
+var chart = client.draw(query, document.getElementById("chart-wrapper"), {
+  title: "Custom chart title",
+  chartType: "barchart"
+});
+  </script>
 
 </body>
 </html>
