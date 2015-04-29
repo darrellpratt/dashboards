@@ -50,7 +50,7 @@ Keen.ready(function() {
 
     });
     client.draw(pageviews_static, document.getElementById("chart-02"), {
-        chartType: "barchart",
+        chartType: "piechart",
         title: false,
         height: 500,
         width: "auto",
@@ -60,13 +60,14 @@ Keen.ready(function() {
                 left: "5%",
                 top: "5%",
                 width: "100%"
-            }
+            },
+            pieHole: .4
         }
     });
     console.log("fetched initial");
     window.setInterval(function() {
         client.draw(pageviews_static, document.getElementById("chart-02"), {
-            chartType: "barchart",
+            chartType: "piechart",
             title: false,
             height: 500,
             width: "auto",
@@ -76,8 +77,8 @@ Keen.ready(function() {
                     left: "5%",
                     top: "5%",
                     width: "100%"
-                }
-                
+                },
+                pieHole: .4
             }
         });
         console.log("fetched");
